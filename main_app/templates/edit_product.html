@@ -1,0 +1,17 @@
+{% extends "shop/base.html" %}
+{% load static %}
+
+
+<title> Edit </title>
+
+
+{% block content %}
+<div>
+    <form action="{% url 'shop:Edit_Product' id=Product.id  %}" method="POST" enctype="multipart/form-data">
+        {{ form.as_p }}
+        <p><input type="submit" value="Update"></p>
+        {% csrf_token %}
+    </form>
+</div>
+
+{% endblock %}
